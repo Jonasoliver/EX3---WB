@@ -17,8 +17,10 @@ function ListagemCliente() {
   }
 
   const options = [
-    { value: "1", label: "Listar todos os clientes" },
-    { value: "2", label: "Listar por Gênero" },
+    { value: "1", label: "Top 10 clientes que mais consumiram (quantidade)" },
+    { value: "2", label: "Top 10 clientes por gênero" },
+    { value: "3", label: "Top 10 clientes que menos consumiram" },
+    { value: "4", label: "Top 5 clientes que mais consumiram (valor)" },
   ];
 
   const genderOptions = [
@@ -30,21 +32,56 @@ function ListagemCliente() {
 
   switch (opcaoSelecionada) {
     case "1":
-      content = <div>Aqui vai a lista de todos os clientes...</div>;
+      content = (
+        <div className="listagem-card">
+          <span className="listagem-titulo">Top 10 clientes que mais consumiram (quantidade)</span>
+          <ul>
+            <li>Exemplo: Cliente 1 - 30 itens</li>
+            <li>Exemplo: Cliente 2 - 25 itens</li>
+          </ul>
+        </div>
+      );
       break;
-      case "2":
-        content = (
-          <>
-            <Seletor opcoes={genderOptions} onChange={handleGenderChange} />
-            {opcaoGenero && (
-              <div>Aqui vai a lista de clientes do gênero {opcaoGenero}...</div>
-            )}
-          </>
-        );
-        break;
+    case "2":
+      content = (
+        <div>
+          <Seletor opcoes={genderOptions} onChange={handleGenderChange} />
+          {opcaoGenero && (
+            <div className="listagem-card">
+              <span className="listagem-titulo">Top 10 clientes do gênero {opcaoGenero}</span>
+              <ul>
+                <li>Exemplo: Cliente 1 ({opcaoGenero})</li>
+                <li>Exemplo: Cliente 2 ({opcaoGenero})</li>
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+      break;
+    case "3":
+      content = (
+        <div className="listagem-card">
+          <span className="listagem-titulo">Top 10 clientes que menos consumiram</span>
+          <ul>
+            <li>Exemplo: Cliente 1 - 2 itens</li>
+            <li>Exemplo: Cliente 2 - 3 itens</li>
+          </ul>
+        </div>
+      );
+      break;
+    case "4":
+      content = (
+        <div className="listagem-card">
+          <span className="listagem-titulo">Top 5 clientes que mais consumiram (valor)</span>
+          <ul>
+            <li>Exemplo: Cliente 1 - R$ 800</li>
+            <li>Exemplo: Cliente 2 - R$ 600</li>
+          </ul>
+        </div>
+      );
+      break;
     default:
       content = null;
-      break
   }
 
   return (

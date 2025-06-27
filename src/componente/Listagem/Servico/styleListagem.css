@@ -1,0 +1,41 @@
+/* Estilo moderno para as listagens */
+.listagem-container {
+  background: #f9f9fb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.listagem-titulo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3a4a;
+  margin-bottom: 1.2rem;
+}
+
+.listagem-opcoes {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.listagem-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.listagem-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 700px) {
+  .listagem-container {
+    padding: 1rem 0.5rem;
+  }
+}
